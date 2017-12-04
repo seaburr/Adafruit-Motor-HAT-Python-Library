@@ -9,7 +9,7 @@ class Winder(object):
     # Constants for this stepper motor. These might need to be moved later.
     motor_port = 1              # Port that stepper motor is connected to.
     steps_per_rev = 200         # Number of steps/revolution for stepper motor.
-    over_turn = 0.25            # Amount of overturn per revolution.
+    over_turn = 0.10            # Amount of overturn per revolution.
     turns_between_pause = 5     # Number of turns before pause and/or reverse direction.
 
     def __init__(self, turns_per_day, rpm, turn_type):
@@ -37,7 +37,7 @@ class Winder(object):
         self.pause = (60 * 60 * 24) / (self.turns_per_day / self.turns_between_pause)
 
     def steps_per_turn(self):
-        self.total_steps = int(steps_per_rev * (1 + self.over_turn))
+        self.total_steps = int(self.steps_per_rev * (1 + self.over_turn))
 
     def rotate_watch(self):
         self.create_motor_hat()

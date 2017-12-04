@@ -1,13 +1,13 @@
 #!/usr/bin/python
-# File:
-# Description:
+# File: watchwinder.py
+# Description: Uses Winder class to wind watch at specified speed, rate, and direction.
 
 import time
 import atexit
 from Winder import Winder
 
-rots_per_day = 750
-rot_rate = 30
+rots_per_day = 1000
+rot_rate = 60
 rot_type = "ALT"
 
 winder = Winder(rots_per_day, rot_rate, rot_type)
